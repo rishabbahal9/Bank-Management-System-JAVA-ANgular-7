@@ -1,0 +1,52 @@
+<app-cashiernav></app-cashiernav>
+<div style="text-align:center">
+   
+   <h3 >Withdraw!!</h3>
+   
+      <div align="center" style="border: 5px solid black; border-radius: 15px;width: 50%;margin:50px auto;padding: 20px 10px;">
+   <form  [formGroup]="withdrawForm">
+   
+   <table>
+   <tr>
+   <div class="formInputBox">
+   <label>
+   Account No:
+   </label>
+   <input type="text" formControlName="accountNo">
+   </div>
+   </tr>
+   <tr *ngIf="withdrawForm.get('accountNo').errors &&withdrawForm.get('accountNo').touched">
+              <td colspan="2">
+                <span *ngIf="this.withdrawForm.get('accountNo').hasError('required') &&withdrawForm.get('accountNo').touched" style="color:red">
+                Account no is required!
+             </span>
+              </td>
+           </tr>
+   
+   
+   <tr>
+   <div class="formInputBox">
+   <label>
+   Amount:
+   </label>
+    <input type="text" formControlName="amount">
+   </div>
+   </tr>
+   <tr *ngIf="withdrawForm.get('amount').errors &&withdrawForm.get('amount').touched">
+              <td colspan="2">
+                <span *ngIf="this.withdrawForm.get('amount').hasError('required') &&withdrawForm.get('amount').touched" style="color:red">
+                please enter the amount to be withdrawn!
+             </span>
+              </td>
+           </tr>
+   <tr>
+     <div style="text-align: center">
+    
+     <button type="submit" (click)="Withdraw()">Withdraw</button>
+   
+ </div>
+ </tr>
+ </table>
+ </form>
+ </div>
+ </div>

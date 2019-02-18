@@ -1,0 +1,76 @@
+<app-execnav></app-execnav>
+<div style="text-align:center">
+   
+   <h5 >Account Registration for {{customerId}} customer Id</h5>
+   
+   <div align="center" style="border: 5px solid black; border-radius: 15px;width: 50%;margin:50px auto;padding: 20px 10px;">
+   <form [formGroup]="createAccountForm">
+   
+   
+   
+   
+
+          
+             
+            
+            <input type="hidden"  formControlName="accountNo" value="300">
+          
+          
+           
+           <div class="formInputBox">
+             Account type
+            
+             <input type="text" class="inputCol" formControlName="accountType">
+          </div>
+          
+          
+           <div *ngIf="createAccountForm.get('accountType').errors && createAccountForm.get('accountType').touched">
+              
+             <span *ngIf="createAccountForm.get('accountType').hasError('required') && createAccountForm.get('accountType').touched" style="color:red">
+                Account Type is Required
+             </span>
+              
+           </div>
+           
+           
+           <div class="formInputBox">
+             Account Balance
+            
+             <input class="inputCol" type="text" formControlName="balance">
+          </div>
+           
+           <div *ngIf="createAccountForm.get('balance').errors && createAccountForm.get('balance').touched">
+              
+             <span *ngIf="createAccountForm.get('balance').hasError('required') && createAccountForm.get('balance').touched" style="color:red">
+                Account Balance is Required
+             </span>
+              
+           </div>
+           <input type="hidden" class="inputCol" formControlName="customerId">
+           <div class="formInputBox">
+             Account Status
+            
+             <input type="text" class="inputCol" formControlName="accountStatus">
+          </div>
+           <div *ngIf="createAccountForm.get('accountStatus').errors && createAccountForm.get('accountStatus').touched">
+              
+                  <span *ngIf="createAccountForm.get('accountStatus').hasError('required') && createAccountForm.get('accountStatus').touched" style="color:red">
+                Account Status is Required
+             </span>
+              
+           </div>
+          
+          
+        
+        <button type="submit" (click)="createAccount()">Register Account</button>
+            
+             
+       
+
+   
+                   
+   
+   
+   </form>
+</div>
+</div>

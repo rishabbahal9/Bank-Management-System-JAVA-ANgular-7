@@ -1,0 +1,54 @@
+
+<!-- <div *ngIf="loginFlag" class="centerComponent" id="buttonBox">
+  	<button class="bigButton" (click)="onLoginPress()">Login</button>
+</div> -->
+<div align="center" style="border: 5px solid black; border-radius: 15px;width: 50%;margin:50px auto;padding: 20px 10px;">
+
+  <h1>User Login</h1>
+  <div *ngIf="loginFlag">
+	<form [formGroup]="loginForm">
+
+<br>
+<br>
+            <div class="formInputBox">
+            User Name
+            <br>
+             <input class="inputCol" type="text"  formControlName="userName" required>
+
+            <div *ngIf="loginForm.get('userName').errors && loginForm.get('userName').touched">
+
+                <span *ngIf="this.loginForm.get('userName').hasError('required') && loginForm.get('userName').touched" style="color:red">
+                     User Name is Required
+                 </span>
+
+            </div>
+          </div>
+          <div class="formInputBox">
+             Password
+             <br>
+             <input class="inputCol" type="password" formControlName="userPassword">
+
+           <div *ngIf="loginForm.get('userPassword').errors && loginForm.get('userPassword').touched">
+
+                  <span *ngIf="loginForm.get('userPassword').hasError('required') && loginForm.get('userPassword').touched" style="color:red">
+               Password is Required
+             </span>
+            </div>
+          </div>  
+
+<br>
+
+          <button type="submit" (click)="login()">Login</button>
+
+
+
+	</form>
+</div>
+
+
+<div id="error"  *ngIf="flagLoginMismatch" style="width: 50%;display: block;margin: auto; color: red">
+	Invalid username or password!!
+</div>
+</div>
+
+

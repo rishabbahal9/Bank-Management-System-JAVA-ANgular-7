@@ -1,0 +1,115 @@
+<app-execnav></app-execnav>
+
+<div style="text-align: center">
+
+	<h3>Update Customer</h3>
+	{{customer.customerName}} {{customer.customerEmail}}
+
+	<div *ngIf="customer==null">Loading form</div>
+	<div *ngIf="!customer==null">Loading formkk</div>
+	<form [formGroup]="updateCustomerForm" >
+
+
+
+
+		<table width="40%" border="1" align="center"
+			style="border-collapse: collapse;">
+			<tr>
+				<td>Customer Name</td>
+
+				<td><input type="text" formControlName="customerName" required></td>
+			</tr>
+			<tr *ngIf="updateCustomerForm.get('customerName').errors && updateCustomerForm.get('customerName').touched">
+				<td colspan="2"><span
+					*ngIf="this.updateCustomerForm.get('customerName').hasError('required') && updateCustomerForm.get('customerName').touched"
+					style="color: red"> Customer Name is Required </span></td>
+			</tr>
+			<tr>
+				<td>Customer Email</td>
+
+				<td><input type="text" formControlName="customerEmail"></td>
+			</tr>
+			<tr
+				*ngIf="updateCustomerForm.get('customerEmail').errors && updateCustomerForm.get('customerEmail').touched">
+				<td colspan="2"><span
+					*ngIf="updateCustomerForm.get('customerEmail').hasError('required') && updateCustomerForm.get('customerEmail').touched"
+					style="color: red"> Customer Email is Required </span></td>
+			</tr>
+			<tr>
+				<td>Customer ContactNo</td>
+
+				<td><input type="text" formControlName="customerContact"></td>
+			</tr>
+			<tr
+				*ngIf="updateCustomerForm.get('customerContact').errors && updateCustomerForm.get('customerContact').touched">
+				<td colspan="2"><span
+					*ngIf="updateCustomerForm.get('customerContact').hasError('required') && updateCustomerForm.get('customerContact').touched"
+					style="color: red"> Customer ContactNo is Required </span></td>
+			</tr>
+			<tr>
+				<td>Customer Age</td>
+
+				<td><input type="text" formControlName="customerAge"></td>
+			</tr>
+			<tr
+				*ngIf="updateCustomerForm.get('customerAge').errors && updateCustomerForm.get('customerAge').touched">
+				<td colspan="2"><span
+					*ngIf="updateCustomerForm.get('customerAge').hasError('required') && updateCustomerForm.get('customerAge').touched"
+					style="color: red"> Customer Age is Required </span></td>
+			</tr>
+
+			<tr>
+			<tr>
+				<td>Customer Address1</td>
+
+				<td><input type="text" formControlName="customerAddress1"></td>
+			</tr>
+			<tr
+				*ngIf="updateCustomerForm.get('customerAddress1').errors && updateCustomerForm.get('customerAddress1').touched">
+				<td colspan="2"><span
+					*ngIf="updateCustomerForm.get('customerAddress1').hasError('required') && updateCustomerForm.get('customerAddress1').touched"
+					style="color: red"> Customer Address1 is Required </span></td>
+			</tr>
+			<tr>
+				<td>Customer Address2</td>
+
+				<td><input type="text" formControlName="customerAddress2"></td>
+			</tr>
+			<tr>
+				<td>Customer City</td>
+
+				<td><input type="text" formControlName="city"></td>
+			</tr>
+			<tr
+				*ngIf="updateCustomerForm.get('city').errors && updateCustomerForm.get('city').touched">
+				<td colspan="2"><span
+					*ngIf="updateCustomerForm.get('city').hasError('required') && updateCustomerForm.get('city').touched"
+					style="color: red"> Customer City is Required </span></td>
+			</tr>
+			<tr>
+				<td>Customer State</td>
+
+				<td><input type="text" formControlName="state"></td>
+			</tr>
+			<tr
+				*ngIf="updateCustomerForm.get('state').errors && updateCustomerForm.get('state').touched">
+				<td colspan="2"><span
+					*ngIf="updateCustomerForm.get('state').hasError('required') && updateCustomerForm.get('state').touched"
+					style="color: red"> Customer State is Required </span></td>
+			</tr>
+
+
+			<tr>
+				<td colspan="2"><button type="submit"
+						(click)="updateCustomer()">Update Customer</button></td>
+
+				<td></td>
+			</tr>
+		</table>
+
+
+
+	</form>
+
+
+</div>

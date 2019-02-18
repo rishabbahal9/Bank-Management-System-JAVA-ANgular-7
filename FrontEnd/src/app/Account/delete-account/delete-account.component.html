@@ -1,0 +1,29 @@
+<p>
+  delete-account works!
+</p>
+
+<form [formGroup]="deleteAccountform">
+<table border=1>
+
+<tr>
+<th><label>Customer Id</label></th>
+<td> <input type="text" name="customerId" formControlName="customerId" readonly></td><br>
+</tr>
+<tr>
+<th><label>AccountNo</label> </th>
+<td><input type="text" name="accountNo" formControlName="accountNo" readonly></td><br>
+</tr>
+
+<tr>
+<th><label>Balance</label> </th>
+ <td><input type="text" name="balance" formControlName="balance" readonly></td><br>
+ </tr>
+ 
+<tr>
+
+</table>
+<button (click)=deleteAccount(accountNo)>delete</button>
+
+</form>
+	<div *ngIf="boolResult" style="color:green"> Account Deleted Successfully!!!!
+	</div>

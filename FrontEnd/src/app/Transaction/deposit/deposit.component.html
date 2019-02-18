@@ -1,0 +1,54 @@
+<app-cashiernav></app-cashiernav>
+<div style="text-align:center">
+   
+   <h3 >Deposit!!</h3>
+   
+   <div align="center" style="border: 5px solid black; border-radius: 15px;width: 50%;margin:50px auto;padding: 20px 10px;">
+   <form  [formGroup]="depositForm">
+   
+   <table>
+   <tr>
+	<div class="formInputBox">
+   <label>
+   Account No:
+   </label>
+   <input type="text" formControlName="accountNo">
+   </div>
+   </tr>
+   <tr *ngIf="depositForm.get('accountNo').errors && depositForm.get('accountNo').touched">
+              <td colspan="2">
+                <span *ngIf="this.depositForm.get('accountNo').hasError('required') && depositForm.get('accountNo').touched" style="color:red">
+                Account no is required!
+             </span>
+              </td>
+           </tr>
+   
+   
+   <tr>
+   <div class="formInputBox">
+   <label>
+   Amount:
+   </label>
+    <input type="text" formControlName="amount">
+   </div>
+   </tr>
+   <tr *ngIf="depositForm.get('amount').errors && depositForm.get('amount').touched">
+              <td colspan="2">
+                <span *ngIf="this.depositForm.get('amount').hasError('required') && depositForm.get('amount').touched" style="color:red">
+                please enter the amount to deposit!
+             </span>
+              </td>
+           </tr>
+   <tr>
+   <div style="text-align: center">
+    <button type="submit" (click)="Deposit()" style="">Deposit</button>
+ 	</div>
+ </tr>
+ </table>
+ </form>
+ </div>
+ 
+ <!-- <div *ngIf="successFlag" style="color: green;">
+ 	Successfully deposited the amount!
+ </div>
+  -->

@@ -1,0 +1,21 @@
+ <app-header></app-header>
+ 
+ <div id="content">
+
+
+<!--
+<a routerLink="/login" >Login</a>
+<router-outlet>
+  <a routerLink="/login" >Login</a>
+</router-outlet>
+
+
+-->
+
+<div id="userLoginButton" *ngIf="loginButtonFlag">
+    <button (click)="loginToggle()" routerLink="/login" id="loginButton">User Login</button>
+</div>
+<router-outlet *ngIf="!loginButtonFlag"></router-outlet>
+
+</div>
+<app-footer></app-footer>

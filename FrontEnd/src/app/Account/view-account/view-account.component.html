@@ -1,0 +1,29 @@
+<p>
+  view-account works!
+</p>
+ <table  width="90%" border="1" align="center" style="border-collapse: collapse;">
+          <tr>
+          	<th>Account No</th>
+          	<th>Account Type</th>
+          	<th>Balance</th>
+          	<th>Account Status</th>
+          	<th>Customer Id</th>
+          	
+          	<th >Action</th>
+          	          </tr>
+          
+          <tr *ngFor="let c of accountList">
+          	<td>{{c.accountNo}}</td>
+          	<td>{{c.accountType}}</td>
+          	<td>{{c.balance}}</td>
+          	<td>{{c.accountStatus}}</td>
+          	<td>{{c.customerId}}</td>
+          	
+          	<td><!-- (click)="deleteAccount(c.accountNo)" -->
+          		<button routerLink="/accountDelete/{{c.accountNo}}/{{c.customerId}}/{{c.balance}}" >Delete</button>
+          	</td>
+          	
+          	
+          	
+          </tr>
+       </table> 

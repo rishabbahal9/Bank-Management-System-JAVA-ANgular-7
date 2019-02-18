@@ -1,0 +1,69 @@
+<app-cashiernav></app-cashiernav>
+ <div style="text-align:center">
+   
+   <h3 >Transfer!!</h3>
+   
+      <div align="center" style="border: 5px solid black; border-radius: 15px;width: 50%;margin:50px auto;padding: 20px 10px;">
+   <form  [formGroup]="transferForm">
+   
+   <table>
+   <tr>
+   <div class="formInputBox">
+   <label>
+   Account No:
+   </label>
+   <input type="text" formControlName="transactionSource">
+   </div>
+   </tr>
+   <tr *ngIf="transferForm.get('transactionSource').errors &&transferForm.get('transactionSource').touched">
+              <td colspan="2">
+                <span *ngIf="this.transferForm.get('transactionSource').hasError('required') &&transferForm.get('transactionSource').touched" style="color:red">
+                Account no is required!
+             </span>
+              </td>
+           </tr>
+   
+   
+    <tr>
+   <div class="formInputBox">
+   <label>
+   Tranfer Account No:
+   </label>
+   <input type="text" formControlName="transactionDestination">
+   </div>
+   </tr>
+   <tr *ngIf="transferForm.get('transactionDestination').errors &&transferForm.get('transactionDestination').touched">
+              <td colspan="2">
+                <span *ngIf="this.transferForm.get('transactionDestination').hasError('required') &&transferForm.get('transactionDestination').touched" style="color:red">
+                Account no is required!
+             </span>
+              </td>
+           </tr>
+   
+   <tr>
+ 
+   <div class="formInputBox">
+   <label>
+   Amount:
+   </label>
+    <input type="text" formControlName="amount">
+   </div>
+   </tr>
+   <tr *ngIf="transferForm.get('amount').errors &&transferForm.get('amount').touched">
+              <td colspan="2">
+                <span *ngIf="this.transferForm.get('amount').hasError('required') &&transferForm.get('amount').touched" style="color:red">
+                please enter the amount !!
+             </span>
+              </td>
+           </tr>
+   <tr>
+     <div style="text-align: center">
+    
+     <button type="submit" (click)="Transfer()">Transfer</button>
+   
+ </div>
+ </tr>
+ </table>
+ </form>
+ </div>
+ </div> 

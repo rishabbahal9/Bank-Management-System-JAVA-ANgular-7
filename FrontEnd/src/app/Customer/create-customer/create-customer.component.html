@@ -1,0 +1,131 @@
+<app-execnav></app-execnav>
+<div style="text-align:center">
+   
+ 
+   <div align="center" style="border: 5px solid black; border-radius: 15px;width: 50%;margin:50px auto;padding: 20px 10px;">
+   <form [formGroup]="insertCustomerForm">
+   
+     <h3 >Customer Registration</h3>
+   
+   
+	 <div class="formInputBox">
+
+             Customer Name
+            
+            <input type="text"	class="inputCol"  formControlName="customerName" required>
+          
+          <div *ngIf="insertCustomerForm.get('customerName').errors && insertCustomerForm.get('customerName').touched">
+                <div *ngIf="this.insertCustomerForm.get('customerName').hasError('required') && insertCustomerForm.get('customerName').touched" class="alert alert-danger">
+                Customer Name is Required
+             </div>
+             
+          </div>
+          <div *ngIf="insertCustomerForm.controls['customerName'].hasError('minlength')" class="alert alert-danger">
+          		 Enter minimum characters
+          </div>
+     </div>
+           
+     <div class="formInputBox">      
+             Customer Email
+            
+             <input type="text"	class="inputCol"  formControlName="customerEmail">
+          
+           <div *ngIf="insertCustomerForm.get('customerEmail').errors && insertCustomerForm.get('customerEmail').touched">
+              
+                  <div *ngIf="insertCustomerForm.get('customerEmail').hasError('required') && insertCustomerForm.get('customerEmail').touched"  class="alert alert-danger">
+                Customer Email is Required
+             </div>
+              
+           </div>
+      </div>
+      
+      
+      <div class="formInputBox">     
+            Customer ContactNo
+            
+             <input type="text"	class="inputCol" formControlName="customerContact">
+          
+           <div *ngIf="insertCustomerForm.get('customerContact').errors && insertCustomerForm.get('customerContact').touched">
+              
+                  <div *ngIf="insertCustomerForm.get('customerContact').hasError('required') && insertCustomerForm.get('customerContact').touched"  class="alert alert-danger">
+                 ContactNo is Required
+             </div>
+              
+           </div>
+           <div *ngIf="insertCustomerForm.controls['customerContact'].hasError('minlength') || insertCustomerForm.controls['customerContact'].hasError('maxlength')" class="alert alert-danger">
+          		 Enter valid number
+          	</div>
+       </div>
+       
+       <div class="formInputBox">    
+           Customer Age
+            
+             <input type="text"	class="inputCol" formControlName="customerAge">
+          
+           <div *ngIf="insertCustomerForm.get('customerAge').errors && insertCustomerForm.get('customerAge').touched">
+              
+             <div *ngIf="insertCustomerForm.get('customerAge').hasError('required') && insertCustomerForm.get('customerAge').touched"  class="alert alert-danger">
+                Customer Age is Required
+             </div>
+              
+           </div>
+        </div>
+          
+        <div class="formInputBox">  
+             Customer Address1
+            
+             <input type="text"	class="inputCol" formControlName="customerAddress1">
+          
+           <div *ngIf="insertCustomerForm.get('customerAddress1').errors && insertCustomerForm.get('customerAddress1').touched">
+              
+                  <div *ngIf="insertCustomerForm.get('customerAddress1').hasError('required') && insertCustomerForm.get('customerAddress1').touched"  class="alert alert-danger">
+                Customer Address1 is Required
+             </div>
+              
+           </div>
+        </div>
+        
+        <div class="formInputBox">   
+             Customer Address2
+            
+             <input type="text"	class="inputCol" formControlName="customerAddress2">
+          
+          Customer City
+            
+             <input type="text"	class="inputCol" formControlName="city">
+          
+           <div *ngIf="insertCustomerForm.get('city').errors && insertCustomerForm.get('city').touched">
+              
+             <div *ngIf="insertCustomerForm.get('city').hasError('required') && insertCustomerForm.get('city').touched"  class="alert alert-danger">
+                Customer City is Required
+             </div>
+              
+           </div>
+         </div>
+         
+         <div class="formInputBox">
+             Customer State
+            
+             <input type="text"	class="inputCol" formControlName="state">
+          
+           <div *ngIf="insertCustomerForm.get('state').errors && insertCustomerForm.get('state').touched">
+              
+                  <div *ngIf="insertCustomerForm.get('state').hasError('required') && insertCustomerForm.get('state').touched"  class="alert alert-danger">
+                Customer State is Required
+             </div>
+              
+           </div>
+          </div>
+          
+          
+             <td colspan="2"><button type="submit" (click)="insertCustomer()">Insert Customer</button></td>
+            
+             
+        
+   
+   
+   
+   </form>
+   
+   
+</div>
